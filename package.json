@@ -1,0 +1,23 @@
+{
+  "name": "defi-transaction-website",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "contracts",
+    "server"
+  ],
+  "scripts": {
+    "start": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "test": "cd contracts && npm test",
+    "chain": "cd contracts && npx hardhat node",
+    "deploy": "cd contracts && npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:testnet": "cd contracts && npx hardhat run scripts/deploy.js --network ropsten",
+    "server": "cd server && node app.js"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2",
+    "react": "^18.2.0"
+  }
+}
